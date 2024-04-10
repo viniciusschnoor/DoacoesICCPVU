@@ -1,5 +1,4 @@
 ﻿using DoacoesICCPVU.Contexts;
-using DoacoesICCPVU.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DoacoesICCPVU.Controllers
@@ -15,6 +14,7 @@ namespace DoacoesICCPVU.Controllers
 
         public IActionResult Index()
         {
+            ViewData["Title"] = "Doações";
             var doacoes = _context.Doacoes.ToList();
             return View(doacoes);
         }

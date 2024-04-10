@@ -1,16 +1,45 @@
 ﻿@model List<DoacoesICCPVU.Models.Doacao>;
 
+<h1>@ViewData["Title"]</h1>
+<button type="button" class="btn btn-outline-success">Incluir</button>
+
 @{
-    foreach (var item in Model)
+    if (Model.Count > 0)
     {
-        <div class="card" style="width: 18rem;">
-            <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Ofício #@item.NumeroOficio - @item.Donatario</h5>
-                <p class="card-text">@item.Doador</p>
-                <a href="./Doacao/@item.NumeroOficio" class="btn btn-primary">Detalhes</a>
-            </div>
-        </div>
-        <br/>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Donatário</th>
+                    <th scope="col">Doador</th>
+                    <th scope="col">Observação</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var doacao in Model)
+                {
+                    <tr>
+                        <th scope="row">@doacao.NumeroOficio.ToString().PadLeft(5, '0')</th>
+                        <td>@doacao.EmitidoEm</td>
+                        <td>@doacao.Donatario</td>
+                        <td>@doacao.Doador</td>
+                        <td>@doacao.Motivo</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                <button type="button" class="btn btn-outline-danger btn-sm">Excluir</button>
+                                <button type="button" class="btn btn-outline-warning btn-sm">Editar</button>
+                                <button type="button" class="btn btn-outline-primary btn-sm">Imprimir</button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <hr />
+        <p>Sem doações!</p>
     }
 }
