@@ -1,7 +1,11 @@
+using DoacoesICCPVU.Contexts;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<DoacaoContext>();
 
 var app = builder.Build();
 

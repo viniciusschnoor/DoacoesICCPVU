@@ -1,0 +1,16 @@
+﻿@model List<DoacoesICCPVU.Models.Doacao>;
+
+@{
+    foreach (var item in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Ofício #@item.NumeroOficio - @item.Donatario</h5>
+                <p class="card-text">@item.Doador</p>
+                <a href="./Doacao/@item.NumeroOficio" class="btn btn-primary">Detalhes</a>
+            </div>
+        </div>
+        <br/>
+    }
+}
