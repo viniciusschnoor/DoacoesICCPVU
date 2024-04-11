@@ -1,0 +1,27 @@
+﻿@model DoacoesICCPVU.Models.Doacao;
+
+<h1>@ViewData["Title"]</h1>
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="EmitidoEm">Data da Doação:</label>
+        <input asp-for="EmitidoEm" type="date" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Itens">Motivo:</label>
+        <input asp-for="Motivo" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Doador">Doador:</label>
+        <input asp-for="Doador" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Donatario">Donatário:</label>
+        <input asp-for="Donatario" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Itens">Itens:</label>
+        <input asp-for="Itens" class="form-control" />
+    </div>
+    <button class="btn btn-primary" type="submit">Salvar</button>
+    <button asp-controller="Doacao" asp-action="Index" class="btn btn-danger">Cancelar</button>
+</form>

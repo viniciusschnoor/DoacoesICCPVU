@@ -1,7 +1,7 @@
 ﻿@model List<DoacoesICCPVU.Models.Doacao>;
 
 <h1>@ViewData["Title"]</h1>
-<button type="button" class="btn btn-outline-success">Incluir</button>
+<a asp-controller="Doacao" asp-action="Create" class="btn btn-outline-success">Incluir</a>
 
 @{
     if (Model.Count > 0)
@@ -14,6 +14,7 @@
                     <th scope="col">Donatário</th>
                     <th scope="col">Doador</th>
                     <th scope="col">Observação</th>
+                    <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
